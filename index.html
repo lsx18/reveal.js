@@ -1,49 +1,237 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- <section>Slide 1</section>
+				<section>			
+					<section>Vertical Slide 2</section>
+					<section>Vertical Slide 2.1</section>
+					<section>Vertical Slide 2.2</section>
+			  </section>
+				<section>Slide 3</section> -->
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Page title
+          A paragraph with some text and a [link](http://hakim.se).
+				</textarea>
+      </section>
+
+      <section data-markdown>
+        <script type="text/template">
+          ## Page title2
+          A paragraph with some text and a [link](http://hakim.se).
+				</script>
+      </section>
+
+      <!-- <section data-markdown data-separator="---" data-separator-vertical="--"> -->
+      <section data-markdown data-separator="---">
+        <script type="text/template">
+          # 主题1
+          - 主题1-内容1
+          - 主题1-内容2
+          <!-- --
+          ## 主题1-内容1
+          内容1-细节1
+          --
+          ## 主题1-内容2
+          内容1-细节2 -->
+          ---
+          # 主题2
+          ---
+          <div>ddd</div>
+          <h1>11111111</h1>
+          <h2>2222222</h2>
+          <h3>3333333</h3>
+          <hr>
+          ---
+				</script>
+      </section>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      // 是否在右下角展示控制条
+      controls: true,
+
+      // 是否显示演示的进度条
+      progress: true,
+
+      // 是否显示当前幻灯片的页数编号，也可以使用代码 “slideNumber: 'c/t'” ，表示当前页/总页数。
+      slideNumber: false,
+
+      // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+      history: false,
+
+      // 是否启用键盘快捷键来导航
+      keyboard: true,
+
+      // 是否启用幻灯片的概览模式，可使用 "Esc" 或 "o" 键来切换概览模式
+      overview: true,
+
+      // 是否将幻灯片垂直居中
+      center: true,
+
+      // 是否在触屏设备上启用触摸滑动切换
+      touch: true,
+
+      // 是否循环演示
+      loop: false,
+
+      // 是否将演示的方向变成 RTL，即从右往左
+      rtl: false,
+
+      // 是否每次演示的时候，随机幻灯片的顺序
+      shuffle: false,
+
+      // 全局开启和关闭碎片。
+      fragments: true,
+
+      // 标识演示文稿是否在嵌入模式中运行，即包含在屏幕的有限部分中的
+      embedded: false,
+
+      // 标识当问号键被点击的时候是否应该显示一个帮助的覆盖层
+      help: true,
+
+      // 标识演讲者备注标志是否让所有观看者可见
+      showNotes: false,
+
+      // 两个幻灯片之间自动切换的时间间隔（毫秒）
+      // 当设置成 0 的时候则禁止自动切换
+      // 该值可以被幻灯片上的 “data-autoslide” 属性覆盖
+      autoSlide: 0,
+
+      // // 当遇到用户输入的时候停止自动切换
+      autoSlideStoppable: true,
+
+      // 加载除当前可见的幻灯片之外的幻灯片数量
+      viewDistance: 3,
+
+      // 视差背景图片
+      parallaxBackgroundImage: "",
+      // e.g. '//s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'
+
+      // 视差背景尺寸
+      parallaxBackgroundSize: "", // CSS syntax, e.g. "2100px 900px"
+
+      // 移动视差背景（水平和垂直）滑动变化的数量, 例如 100
+      // - 除了指定自动计算
+      // - 设置为 0 时，禁止沿轴运动
+      parallaxBackgroundHorizontal: null,
+      parallaxBackgroundVertical: null,
+
+      //--------以上是基础项，下面是演示文稿的大小------//
+
+      // 演示稿的“正常”的大小。
+      // 当演示稿被缩放时，将会适应不同的分辨率，而宽高比也将会被保留。
+      // 可以用百分比单位指定。
+      width: 960,
+      height: 700,
+
+      // 显示大小应该考虑到在内容的外围保留一些空白。
+      margin: 0.1,
+
+      // 应用到内容的最大最小的设置项
+      minScale: 0.2,
+      maxScale: 1.5,
+
+      //--------以上是基础项，下面是依赖------//
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+
+        // 完全实现跨浏览器：classList
+        // https://github.com/eligrey/classList.js/
+        {
+          src: "lib/js/classList.js",
+          condition: function () {
+            return !document.body.classList;
+          }
+        },
+
+        // 在 section 标籤中解读 Markdown
+        {
+          src: "plugin/markdown/marked.js",
+          condition: function () {
+            return !!document.querySelector("[data-markdown]");
+          }
+        },
+        {
+          src: "plugin/markdown/markdown.js",
+          condition: function () {
+            return !!document.querySelector("[data-markdown]");
+          }
+        },
+
+        // 在 code 标籤中高亮代码
+        {
+          src: "plugin/highlight/highlight.js",
+          async: true,
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        },
+
+        // 按住 Alt+点击 实现放大和缩小
+        {
+          src: "plugin/zoom-js/zoom.js",
+          async: true
+        },
+
+        // 演讲者备注
+        {
+          src: "plugin/notes/notes.js",
+          async: true
+        },
+
+        // MathJax
+        {
+          src: "plugin/math/math.js",
+          async: true
+        }
+      ]
+    });
+
+    // 关闭自动切换
+    Reveal.configure({ autoSlide: 0 });
+
+    // 开启每 5 秒自动切换一次
+    Reveal.configure({ autoSlide: 5000 });
+
+  </script>
+</body>
+
 </html>
